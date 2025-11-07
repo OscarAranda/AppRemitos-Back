@@ -1,3 +1,6 @@
+// Load environment variables early so entity files that read process.env
+// see the correct values (this ensures table/schema names from .env are used)
+import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';

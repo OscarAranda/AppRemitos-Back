@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-const REMITOS_TABLE = process.env.REMITOS_TABLE_NAME || 'remitos';
-const REMITOS_SCHEMA = process.env.REMITOS_SCHEMA || 'dbo';
+const REMITOS_TABLE = process.env.REMITOS_TABLE_NAME ;
+const REMITOS_SCHEMA = process.env.REMITOS_SCHEMA;
 
 @Entity({ name: REMITOS_TABLE, schema: REMITOS_SCHEMA })
 export class Remito {
@@ -11,7 +11,7 @@ export class Remito {
   @Column({ name: 'numero_remito', nullable: true })
   numeroRemito: string;
 
-  @Column({ name: 'cliente_id', nullable: true })
+  @Column({ name: 'id_cliente', nullable: true })
   clienteId: string;
 
   @Column({ name: 'razon_social', nullable: true })

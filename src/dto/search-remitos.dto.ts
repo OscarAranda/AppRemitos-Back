@@ -33,5 +33,5 @@ export class SearchRemitosDto {
   @IsInt()
   @Min(1)
   @Max(500)
-  limit?: number = 50;
+  limit?: number = 20;
 }

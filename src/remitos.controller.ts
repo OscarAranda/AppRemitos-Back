@@ -18,8 +18,8 @@ export class RemitosController {
     } catch (err: any) {
       // detect SQL Server 'Invalid object name' and return a helpful error
       if (err instanceof QueryFailedError || (err && err.message && err.message.includes('Invalid object name'))) {
-        const tbl = process.env.REMITOS_TABLE_NAME || 'remitos';
-        const schema = process.env.REMITOS_SCHEMA || 'dbo';
+        const tbl = process.env.REMITOS_TABLE_NAME;
+        const schema = process.env.REMITOS_SCHEMA;
         throw new HttpException(
           `Database error: table '${schema}.${tbl}' not found. Please verify the REMITOS_TABLE_NAME and REMITOS_SCHEMA environment variables and that the table exists. Original: ${err.message}`,
           HttpStatus.INTERNAL_SERVER_ERROR,

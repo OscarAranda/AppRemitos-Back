@@ -12,11 +12,11 @@ import { RemitosController } from './remitos.controller';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: process.env.DB_HOST || 'localhost',
-      port: +(process.env.DB_PORT || 1433),
-      username: process.env.DB_USERNAME || 'sa',
-      password: process.env.DB_PASSWORD || '',
-      database: process.env.DB_DATABASE || 'remitosdb',
+      host: process.env.DB_HOST,
+      port: +(process.env.DB_PORT),
+      username: process.env.DB_USERNAME ,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DATABASE,
       entities: [Remito],
       synchronize: process.env.TYPEORM_SYNCHRONIZE === 'true' || false, // enable only for dev via env var
       options: {

@@ -52,8 +52,8 @@ export class RemitosService {
 
     qb.orderBy('r.fecha', 'DESC');
 
-    const page = filters.page && filters.page > 0 ? filters.page : 1;
-    const limit = filters.limit && filters.limit > 0 ? Math.min(filters.limit, 500) : 50;
+  const page = filters.page && filters.page > 0 ? filters.page : 1;
+  const limit = filters.limit && filters.limit > 0 ? Math.min(filters.limit, 500) : 20;
 
     qb.skip((page - 1) * limit).take(limit);
 
